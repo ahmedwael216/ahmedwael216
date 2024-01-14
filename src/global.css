@@ -1,0 +1,24 @@
+/* global.css */
+
+/* Set direction to auto for Markdown-related HTML elements */
+/*body,*/
+/*h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+a,
+blockquote {
+	direction: auto !important;
+}*/
+
+blockquote {
+	border-left: 4px solid #ddd;
+	padding-left: 1em;
+	margin-left: 0;
+}
