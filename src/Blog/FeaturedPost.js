@@ -9,8 +9,6 @@ import CardMedia from '@mui/material/CardMedia';
 
 function FeaturedPost(props) {
 	const { post } = props;
-	console.log(post);
-	console.log(post.image);
 	return (
 		<Grid item xs={12} md={6}>
 			<CardActionArea component="a" href="#">

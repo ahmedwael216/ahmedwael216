@@ -5,29 +5,19 @@ import Container from '@mui/material/Container';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import Header from './Header';
-import MainFeaturedPost from './MainFeaturedPost';
-import FeaturedPost from './FeaturedPost';
-import Main from './Main';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-import post1 from './posts/blog-post.1.md';
-import post2 from './posts/blog-post.2.md';
-import post3 from './posts/blog-post.3.md';
-
-const sections = [
-	{ title: 'Home', url: '#/' },
-	{ title: 'About Me', url: '#/about' },
-	{ title: 'Linux', url: '#/linux' },
-	{ title: 'Writeups', url: '#/writeups' },
-	{ title: 'All Posts', url: '#/posts' },
-];
+import MainFeaturedPost from '../Blog/MainFeaturedPost';
+import FeaturedPost from '../Blog/FeaturedPost';
+import Main from '../Blog/Main';
+import Sidebar from '../Blog/Sidebar';
+import post1 from '../Blog/posts/blog-post.1.md';
+import post2 from '../Blog/posts/blog-post.2.md';
+import post3 from '../Blog/posts/blog-post.3.md';
 
 const mainFeaturedPost = {
 	title: 'Title of a longer featured blog post',
 	description:
 		"Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-	image: 'https://source.unsplash.com/random?wallpapers',
+	image: 'https://images.unsplash.com/photo-1495932574959-fa95bc3c4ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDUzMTkwMTg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
 	imageText: 'main image description',
 	linkText: 'Continue reading…',
 };
@@ -38,15 +28,14 @@ const featuredPosts = [
 		date: 'Nov 12',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image: 'https://source.unsplash.com/random?wallpapers',
+		image: 'https://images.unsplash.com/photo-1495932574959-fa95bc3c4ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDUzMTkwMTg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
 		imageLabel: 'Image Text',
 	},
 	{
 		title: 'Post title',
 		date: 'Nov 11',
-		description:
-			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image: '../images/cheezburger.jpg',
+		description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
+		image: 'https://images.unsplash.com/photo-1495932574959-fa95bc3c4ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDUzMTkwMTg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
 		imageLabel: 'Image Text',
 	},
 ];
@@ -77,12 +66,9 @@ const sidebar = {
 	],
 };
 
-export default function Blog() {
+export default function Home() {
 	return (
-		<div >
-			<CssBaseline />
-			<Container maxWidth="lg">
-				<Header title="Ahmed's Wael Blog" sections={sections} />
+		<div >	
 				<main>
 					<MainFeaturedPost post={mainFeaturedPost} />
 					<Grid container spacing={4}>
@@ -100,11 +86,6 @@ export default function Blog() {
 						/>
 					</Grid>
 				</main>
-			</Container>
-			<Footer
-				title="Footer"
-				description="Something here to give the footer a purpose!"
-			/>
 		</div>
 	);
 }

@@ -25,10 +25,7 @@ function Main(props) {
 			</Typography>
 			<Divider />
 			{posts.map((post) => (
-				//<Markdown className="markdown" key={post.substring(0, 40)}>
-				//	{post}
-				//</Markdown>
-				<div dangerouslySetInnerHTML={{ __html: marked(post) }}></div>
+				<div key={post.substring(0,40)} dangerouslySetInnerHTML={{ __html: marked(post) }}></div>
 			))}
 		</Grid>
 	);

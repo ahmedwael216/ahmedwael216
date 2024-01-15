@@ -1,11 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'build'),
+		assetModuleFilename: "[name][ext]",
 	},
 	devServer: {
 		static: path.join(__dirname, 'public'),
@@ -13,6 +16,11 @@ module.exports = {
 		open: true,
 	},
 	plugins: [
+		new CopyPlugin({
+			patterns: [
+				{ from: "public/images", to: "images" },
+			],
+		}),
 		new HtmlWebpackPlugin({
 			template: 'public/index.html',
 		}),
@@ -22,11 +30,6 @@ module.exports = {
 	],
 	module: {
 		rules: [
-			{
-				test: /\.(png|svg|jpg|gif|jpe?g)$/,
-				type: "asset/resource"
-			
-			},
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
