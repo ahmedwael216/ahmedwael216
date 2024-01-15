@@ -1,0 +1,7 @@
+[
+	{ "title": "Home", "url": "#/"},
+	{ "title": "About Me", "url": "#/about"},
+	{ "title": "Linux", "url": "#/linux"},
+	{ "title": "Writeups", "url": "#/writeups"},
+	{ "title": "All Posts", "url": "#/posts"}
+]
