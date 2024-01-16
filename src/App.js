@@ -9,6 +9,7 @@ import About from './Pages/About';
 import Linux from './Pages/Linux';
 import Writeups from './Pages/Writeups';
 import Posts from './Pages/Posts';
+import Edit from './Pages/Edit';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -37,6 +38,7 @@ function App() {
 							<Route path="/linux" element={<Linux />} />
 							<Route path="/writeups" element={<Writeups />} />
 							<Route path="/posts" element={<Posts />} />
+							<Route path="/edit" element={<Edit />} />
 							{/*<Route path="*" element={<NotFound />} />*/}
 						</Routes>
 					</div>
