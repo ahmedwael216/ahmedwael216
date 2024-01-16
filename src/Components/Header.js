@@ -6,14 +6,15 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import sections from '../json/sections.json';
 
-function Header(props) {
-  const { sections, title } = props;
+function Header() {
+	const title="Ahmed's Wael Blog";
 
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        {/* <Button size="small">Subscribe</Button>//TODO I removed the subscirbe button replace it with RSS*/}
+        {/* <Button size="small">Subscribe</Button>//TODO I removed the subscirbe button to replace it with RSS*/}
         <Typography
           component="h2"
           variant="h5"
@@ -26,7 +27,7 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        {/* <Button variant="outlined" size="small">
+        {/* <Button variant="outlined" size="small"> //TODO search
           Sign up
         </Button> */}
       </Toolbar>
@@ -51,15 +52,5 @@ function Header(props) {
     </React.Fragment>
   );
 }
-
-Header.propTypes = {
-  sections: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default Header;

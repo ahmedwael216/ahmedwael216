@@ -1,13 +1,16 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home';
-import About from './Pages/About';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import './global.css';
 import Container from '@mui/material/Container';
+import './global.css';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Linux from './Pages/Linux';
+import Writeups from './Pages/Writeups';
+import Posts from './Pages/Posts';
+
 import Header from './Components/Header';
-import sections from './json/sections.json';
 import Footer from './Components/Footer';
 
 const darkTheme = createTheme({
@@ -25,12 +28,15 @@ function App() {
 		<ThemeProvider theme={darkTheme}>
 			<CssBaseline />
 			<Container maxWidth="lg">
-				<Header title="Ahmed's Wael Blog" sections={sections} />
+				<Header/>
 				<HashRouter>
 					<div>
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/about" element={<About />} />
+							<Route path="/linux" element={<Linux />} />
+							<Route path="/writeups" element={<Writeups />} />
+							<Route path="/posts" element={<Posts />} />
 							{/*<Route path="*" element={<NotFound />} />*/}
 						</Routes>
 					</div>
